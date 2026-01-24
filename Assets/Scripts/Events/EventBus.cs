@@ -54,9 +54,9 @@ namespace Events
                 callbacksSnapshot = callbacks.ToArray();
             }
 
-            for (var i = 0; i < callbacksSnapshot.Length; i++)
+            for (int callbackIndex = 0; callbackIndex < callbacksSnapshot.Length; callbackIndex++)
             {
-                if (callbacksSnapshot[i] is Action<T> action)
+                if (callbacksSnapshot[callbackIndex] is Action<T> action)
                 {
                     action.Invoke(gameEvent);
                 }
